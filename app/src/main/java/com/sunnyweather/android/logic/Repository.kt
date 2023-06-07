@@ -12,7 +12,7 @@ object Repository {
     fun searchPlaces(query : String) = liveData(Dispatchers.IO) {
         val result = try {
             val placeResponse = SunnyWeatherNetwork.searchPlaces(query)
-            if (placeResponse.status == "OK") {
+            if (placeResponse.status == "ok") {
                 val places = placeResponse.places
                 Result.success(places)
             }else {
